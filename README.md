@@ -1,5 +1,5 @@
-# **PC-Sales-Data-Warehouse
-Staging &amp; Dimensional Modeling**
+# **PC-Sales-Data-Warehouse**
+**Staging &amp; Dimensional Modeling**
 
 **Project Overview**
 
