@@ -16,6 +16,7 @@
 ​ **Key Milestones & Implementation**
 
 ​1. Data Modeling & Normalization
+
 ​The initial phase involved analyzing raw datasets to identify entities and attributes. Using draw.io, I designed a Star Schema with a focus on:
 
 ​Normalization: 
@@ -58,5 +59,5 @@ Implementing constraints to ensure referential integrity across the entire schem
 ​BI Visualization: 
 Connecting the final warehouse to a BI tool to transform this structured data into an interactive dashboard.
 
-​Note: _All data used in this project is synthetic/dummy data provided for educational purposes by Bright Learn Bootcamp.
-_
+​Note: All data used in this project is synthetic/dummy data provided for educational purposes by Bright Learn Bootcamp.
+
