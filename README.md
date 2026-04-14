@@ -43,7 +43,7 @@ Applied SELECT DISTINCT logic during the migration from staging to the warehouse
 ​Execution: 
 Successfully processed and transformed 10,000+ rows of data while maintaining strict data types (e.g., nvarchar(50)).
 
-**📈 Future Scope (Continuous Project)**
+**Future Scope (Continuous Project)**
 
 ​As this is a continuous project, the next development phases will include:
 ​Relational Integration: 
