@@ -8,7 +8,9 @@
 ​ **Tech Stack**
 
 ​Database Engine: SQL Server (SSMS)
+
 ​Architectural Modeling: draw.io
+
 ​Language: T-SQL (DDL & DML)
 
 ​ **Key Milestones & Implementation**
