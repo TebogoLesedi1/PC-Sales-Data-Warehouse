@@ -63,8 +63,11 @@ Prepared the Fact table for analytical queries
 
 
 ✅ Rows processed: 10,000+
+
 ✅ Duplicate records removed
+
 ✅ Surrogate keys generated
+
 ✅ Data standardized and normalized
 
 **🧩 Key Design Decisions**
@@ -94,35 +97,61 @@ Clear data flow lifecycle
 Used to:
 
 Ensure uniqueness
-Avoid dependency on raw source data
+
+Avoid dependency on raw source 
+
 Improve join performance
 
 **📂 Project Structure**
 
 PC-Sales-Data-Warehouse/
+
 │
+
 ├── DOCS/
+
 │   ├── pc_sales_schema.png
+
 │   ├── databses_creation.png
+
 │   ├── inserting data into dims part1.png
+
 │   ├── dim_payment.png
+
 │   └── dim_customer.png
+
 │
+
 ├── raw_data
+
 │   └── raw_pc_data.csv
+
 │
+
 ├── SQL/
+
 │   ├── fact_sales.sql
+
 │   ├── dim_channel.sql
+
 │   ├── dim_customer.sql
+
 │   ├── dim_date.sql
+
 │   ├── dim_location.sql
+
 │   ├── dim_payment.sql
+
 │   ├── dim_priority.sql
+
 │   ├── dim_product.sql
+
 │   ├── dim_sales_person.sql
+
 │   └── dim_shop.sql
+
 │
+
 └── README.md
 
 **🧪 Sample Transformation**
