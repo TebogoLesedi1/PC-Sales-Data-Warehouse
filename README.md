@@ -24,13 +24,17 @@ Star Schema with a central Fact table connected to Dimension tables.
 The schema was designed to:
 
 Reduce redundancy through normalization
+
 Improve query performance
+
 Support scalable analytics
 
 **⚙️ Tech Stack**
 
 Database Engine: SQL Server (SSMS)
+
 Language: T-SQL (DDL & DML)
+
 Data Modeling: draw.io
 
 **🔄 ETL Pipeline**
