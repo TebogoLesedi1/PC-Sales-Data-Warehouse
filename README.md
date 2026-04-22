@@ -1,65 +1,218 @@
 # **PC-Sales-Data-Warehouse**
 **Staging &amp; Dimensional Modeling**
 
-**Project Overview**
+**🚀 Project Overview**
 
-​This project focuses on the ETL (Extract, Transform, Load) process of transforming raw, redundant PC sales data into a structured and normalized Star Schema. This was developed as part of my journey at Bright Learn Bootcamp to demonstrate data engineering best practices in data staging, warehousing, and architectural design.
+This project showcases the end-to-end design and implementation of a Data Warehouse solution built from raw, unstructured PC sales data.
 
-​ **Tech Stack**
+Developed as part of the Bright Learn Bootcamp, the goal was to simulate a real-world data engineering pipeline by transforming noisy source data into a clean, analytics-ready Star Schema.
 
-​Database Engine: SQL Server (SSMS)
 
-​Architectural Modeling: draw.io
+**🧱 Architecture at a Glance**
 
-​Language: T-SQL (DDL & DML)
+Staging Layer (Computer_std)
+Raw data lands here in its original, unrefined form.
+Data Warehouse Layer (Computer_dhw)
+Clean, structured, and optimized for querying and reporting
 
-​ **Key Milestones & Implementation**
+**Modeling Approach**
 
-​1. Data Modeling & Normalization
-
-​The initial phase involved analyzing raw datasets to identify entities and attributes. Using draw.io, I designed a Star Schema with a focus on:
-
-​Normalization: 
-Breaking down a flat, redundant dataset into descriptive Dimension tables to reduce data redundancy and improve integrity.
-​Attribute Grouping:
-Separating hardware specifications (RAM, Storage, Make) into a dedicated Dim_Product table and organizing customer data into Dim_Customer.
-Structural Design:
-Defining the blueprint for Primary Keys to ensure unique identification of records.
-
+Star Schema with a central Fact table connected to Dimension tables.
 ![image alt](https://github.com/TebogoLesedi1/PC-Sales-Data-Warehouse/blob/main/DOCS/pc_schema2.png?raw=true)
 
-​2. Dual-Database Architecture
-​I established a professional environment by creating two separate databases:
 
-​Staging Database (Computer_std): 
-Acts as a landing zone for raw, uncleaned ingestion data.
-​Warehouse Database (Computer_dhw): 
-The destination for clean, standardized, and normalized data ready for analysis.
+The schema was designed to:
 
-​3. Data Transformation (ETL)
-​Using SQL scripts in SSMS, I executed the following:
+Reduce redundancy through normalization
 
-​Schema Definition: 
-Built the tables using DDL, implementing IDENTITY(1,1) for surrogate keys to automate record indexing.
-​De-duplication: 
-Applied SELECT DISTINCT logic during the migration from staging to the warehouse, ensuring only unique, high-quality records were inserted.
-​Execution: 
-Successfully processed and transformed 10,000+ rows of data while maintaining strict data types (e.g., nvarchar(50)).
+Improve query performance
 
-**Future Scope (Continuous Project)**
+Support scalable analytics
 
-​As this is a continuous project, the next development phases will include:
-​Relational Integration: 
-Altering the Fact_PC_Sales table to implement Foreign Keys, officially establishing the relational links between the central Fact table and the Dimension tables.
+**⚙️ Tech Stack**
 
-​Calculated Measures: 
-Developing logic to calculate metrics such as Total Sales, Finance Amounts, and Profit directly within the warehouse.
+Database Engine: SQL Server (SSMS)
 
-​Data Validation:
-Implementing constraints to ensure referential integrity across the entire schema.
+Language: T-SQL (DDL & DML)
 
-​BI Visualization: 
-Connecting the final warehouse to a BI tool to transform this structured data into an interactive dashboard.
+Data Modeling: draw.io
 
-​Note: All data used in this project is synthetic/dummy data provided for educational purposes by Bright Learn Bootcamp.
+**🔄 ETL Pipeline**
 
+1. Extraction
+
+Raw PC sales data is ingested into the staging database without modification.
+
+2. Transformation
+
+This is where chaos becomes structure:
+
+Removed duplicate records using SELECT DISTINCT
+
+Standardized data formats and data types
+
+Grouped attributes into logical entities:
+
+Dim_Product → Hardware specs (RAM, Storage, Brand)
+
+Dim_Customer → Customer details
+
+3. Loading
+   
+Inserted clean data into dimension tables
+
+Generated surrogate keys using IDENTITY(1,1)
+
+Prepared the Fact table for analytical queries
+
+
+✅ Rows processed: 10,000+
+
+✅ Duplicate records removed
+
+✅ Surrogate keys generated
+
+✅ Data standardized and normalized
+
+**🧩 Key Design Decisions**
+
+⭐ Star Schema over Snowflake
+
+Chosen for:
+
+Faster query performance
+
+Simpler joins
+
+Better usability for BI tools
+
+**🗃️ Dual-Database Architecture**
+
+Separating staging and warehouse layers ensures:
+
+Data integrity
+
+Easier debugging
+
+Clear data flow lifecycle
+
+**🔑 Surrogate Keys**
+
+Used to:
+
+Ensure uniqueness
+
+Avoid dependency on raw source 
+
+Improve join performance
+
+**📂 Project Structure**
+
+PC-Sales-Data-Warehouse/
+
+│
+
+├── DOCS/
+
+│   ├── pc_sales_schema.png
+
+│   ├── databses_creation.png
+
+│   ├── inserting data into dims part1.png
+
+│   ├── dim_payment.png
+
+│   └── dim_customer.png
+
+│
+
+├── raw_data
+
+│   └── raw_pc_data.csv
+
+│
+
+├── SQL/
+
+│   ├── fact_sales.sql
+
+│   ├── dim_channel.sql
+
+│   ├── dim_customer.sql
+
+│   ├── dim_date.sql
+
+│   ├── dim_location.sql
+
+│   ├── dim_payment.sql
+
+│   ├── dim_priority.sql
+
+│   ├── dim_product.sql
+
+│   ├── dim_sales_person.sql
+
+│   └── dim_shop.sql
+
+│
+
+└── README.md
+
+**🧪 Sample Transformation**
+
+De-duplication Process
+
+INSERT INTO Dim_Product (ProductName, RAM, Storage)
+
+SELECT DISTINCT ProductName, RAM, Storage
+
+FROM Computer_std.dbo.Raw_PC_Data;
+
+🔍 Before vs After
+
+Raw Data (Staging)
+
+Clean Data (Warehouse)
+
+**📈 Future Enhancements**
+
+This project is actively evolving. Next steps include:
+
+🔗 Implementing Foreign Key constraints in the Fact table
+
+📐 Creating calculated measures (Total Sales, Profit, Finance Metrics)
+
+🛡️ Enforcing data validation & integrity constraints
+
+📊 Connecting to a BI tool for interactive dashboards
+
+🎯 What This Project Demonstrates
+
+Data modeling & dimensional design
+
+Building ETL pipelines using SQL
+
+Data cleaning and transformation techniques
+
+Designing scalable data warehouse architecture
+
+Translating raw data into business-ready insights
+
+📌 Note
+
+All data used in this project is synthetic and provided for educational purposes by Bright Learn Bootcamp.
+
+🌱 About Me
+
+Aspiring Data Engineer / Data Scientist passionate about building real-world data solutions.
+Currently developing projects that blend data engineering, analytics, and machine learning foundations.
+
+
+
+
+
+
+
+
+
+​
