@@ -26,6 +26,8 @@ Separating hardware specifications (RAM, Storage, Make) into a dedicated Dim_Pro
 Structural Design:
 Defining the blueprint for Primary Keys to ensure unique identification of records.
 
+![image alt](https://github.com/TebogoLesedi1/PC-Sales-Data-Warehouse/blob/main/DOCS/pc_schema2.png?raw=true)
+
 ​2. Dual-Database Architecture
 ​I established a professional environment by creating two separate databases:
 
