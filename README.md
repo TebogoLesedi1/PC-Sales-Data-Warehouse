@@ -110,42 +110,79 @@ Improve join performance
 
 
 PC-Sales-Data-Warehouse/
+
 │
+
 ├── docs_snapshoots/
+
 │   ├── pc_sales_schema.png
+
 │   ├── databases_creation.png
+
 │   ├── inserting data into dims part1.png
+
 │   ├── dim_payment.png
+
 │   └── dim_customer.png
+
 │
+
 ├── raw_data/
+
 │   └── raw_pc_data.csv
+
 │
+
 ├── dim_&_fact_tables/
+
 │   ├── fact_sales.sql
+
 │   ├── dim_channel.sql
+
 │   ├── dim_customer.sql
+
 │   ├── dim_date.sql
+
 │   ├── dim_location.sql
+
 │   ├── dim_payment.sql
+
 │   ├── dim_priority.sql
+
 │   ├── dim_product.sql
+
 │   ├── dim_sales_person.sql
+
 │   └── dim_shop.sql
+
 │
+
 ├── stored_procedure/
+
 │   ├── sp_dim_channel_table.sql
+
 │   ├── sp_dim_customer_table.sql
+
 │   ├── sp_dim_date_table.sql
+
 │   ├── sp_dim_location_table.sql
+
 │   ├── sp_dim_payment_table.sql
+
 │   ├── sp_dim_priority_table.sql
+
 │   ├── sp_dim_product_table.sql
+
 │   ├── sp_dim_sales_person_table.sql 
+
 │   ├── sp_dim_shop_table.sql
+
 │   └── sp_fact_pc_sales_table.sql
+
 │
+
 └── README.md
+
 
 **🧪 Sample Transformation**
 
